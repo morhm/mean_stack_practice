@@ -1,0 +1,12 @@
+<div class="item-container">
+	<a ng-click="seeItem(item.item_id)">
+		<img class="i-photo" width=150 height=150 src={{item.image_url}}/>
+	</a>
+	<p class="i-caption"><strong>{{item.caption}}</strong></p>
+	<p class="i-author"><strong>By: </strong>{{getPersonName(item.author_id)}}</p>
+	<ul class="i-comments" style="list-style: none; padding: 0">
+		<li class="i-comment" ng-repeat="comment in item.comments" style="margin: 5px 0px; border: 1px solid black; padding: 4px;">
+			{{ getPersonName(comment.author_id) }}: {{ comment.comment }}
+		</li>
+	</ul>
+</div>
